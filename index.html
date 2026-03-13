@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Loïc SERVANTIE, étudiant en BTS SIO option SISR. Découvrez mes compétences en administration système, réseaux, cybersécurité et virtualisation. En alternance chez Amedia Solutions.">
+    <title>Loïc SERVANTIE - Portfolio Étudiant BTS SIO SISR</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Loïc SERVANTIE - Portfolio Étudiant BTS SIO SISR">
+    <meta property="og:description" content="Portfolio de Loïc SERVANTIE, étudiant en BTS SIO option SISR. Découvrez mes compétences en administration système, réseaux, cybersécurité et virtualisation.">
+    <meta property="og:image" content="img/profil.png">
+    <meta property="og:url" content="https://loic-servantie.github.io">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Loïc SERVANTIE - Portfolio Étudiant BTS SIO SISR">
+    <meta name="twitter:description" content="Portfolio de Loïc SERVANTIE, étudiant en BTS SIO option SISR. Découvrez mes compétences en administration système, réseaux, cybersécurité et virtualisation.">
+    <meta name="twitter:image" content="img/profil.png">
+    <link rel="icon" type="image/png" href="img/profil.png">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Loïc SERVANTIE",
+        "jobTitle": "Étudiant BTS SIO SISR",
+        "description": "Étudiant passionné en BTS SIO spécialisé en Solutions d'Infrastructure, Systèmes et Réseaux. En alternance chez Amedia Solutions.",
+        "url": "https://www.linkedin.com/in/loïc-servantie-448087263",
+        "sameAs": [
+            "https://www.linkedin.com/in/loïc-servantie-448087263",
+            "https://github.com/loic-servantie"
+        ],
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Lycée Suzanne Valadon",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Limoges"
+            }
+        },
+        "knowsAbout": [
+            "Administration Systèmes",
+            "Réseaux",
+            "Cybersécurité",
+            "Virtualisation",
+            "Solutions Cloud",
+            "Active Directory"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Portfolio Loïc SERVANTIE",
+        "description": "Portfolio étudiant BTS SIO option SISR - Administration système, réseaux et cybersécurité",
+        "url": "https://loic-servantie.github.io",
+        "author": {
+            "@type": "Person",
+            "name": "Loïc SERVANTIE"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">Loïc SERVANTIE</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#accueil" class="nav-link">Accueil</a>
+                <a href="#apropos" class="nav-link">À propos</a>
+                <a href="#competences" class="nav-link">Compétences</a>
+                <a href="#missions" class="nav-link">Missions</a>
+                <a href="#parcours" class="nav-link">Parcours</a>
+                <a href="#veille" class="nav-link">Veille</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <button class="hamburger" aria-label="Menu de navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Bienvenue sur mon Portfolio</h1>
+                <h2 class="hero-subtitle">Étudiant en BTS SIO – SISR</h2>
+                <p class="hero-description">
+                    Je suis <strong>Loïc SERVANTIE</strong>, étudiant passionné en BTS SIO spécialisé en Solutions d'Infrastructure, 
+                    Systèmes et Réseaux. Actuellement en alternance chez <strong>Amedia Solutions</strong>, je me spécialise 
+                    dans l'administration système, la virtualisation et la cybersécurité pour devenir administrateur systèmes et réseaux.
+                </p>
+                <div class="hero-buttons">
+                    <a href="docs/CV_Loïc_SERVANTIE.pdf" class="btn btn-primary" download>Télécharger mon CV</a>
+                    <a href="#apropos" class="btn btn-secondary">En savoir plus</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-image">
+                    <img src="img/profil.png" alt="Photo de Loïc SERVANTIE" class="profile-photo" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- À propos Section -->
+    <section id="apropos" class="about">
+        <div class="container">
+            <h2 class="section-title">À propos de moi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Actuellement en BTS SIO – SISR au Lycée Suzanne Valadon à Limoges, je me forme aux métiers 
+                        de l'infrastructure informatique et des réseaux. Mon alternance chez Amedia Solutions me permet 
+                        d'appliquer concrètement mes connaissances théoriques dans un environnement professionnel.
+                    </p>
+                    <p>
+                        Passionné par les technologies de l'information, je me spécialise dans l'administration des 
+                        systèmes, la sécurisation des environnements informatiques et les solutions de virtualisation. 
+                        Mon objectif professionnel est de devenir administrateur systèmes et réseaux, en contribuant 
+                        à la modernisation et à la sécurisation des infrastructures IT.
+                    </p>
+                    <p>
+                        Mon parcours, qui a débuté par un Bac Pro Systèmes Numériques – RISC au Lycée Georges Cabanis 
+                        de Brive-la-Gaillarde, m'a donné une solide base technique que je continue de développer 
+                        dans le cadre de ma formation actuelle.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compétences Section -->
+    <section id="competences" class="skills">
+        <div class="container">
+            <h2 class="section-title">Compétences principales</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Administration Systèmes</h3>
+                    <p>Gestion et maintenance des infrastructures serveurs</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Réseaux</h3>
+                    <p>Configuration et sécurisation des réseaux informatiques</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cybersécurité</h3>
+                    <p>Sécurisation des environnements informatiques</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Virtualisation</h3>
+                    <p>VMware, Hyper-V et solutions de virtualisation</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Solutions Cloud</h3>
+                    <p>Déploiement et gestion d'infrastructures cloud</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3>Active Directory</h3>
+                    <p>Gestion des identités et des accès</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Missions Section -->
+    <section id="missions" class="missions">
+        <div class="container">
+            <h2 class="section-title">Mes Missions</h2>
+            <p class="section-subtitle" style="text-align: center; color: var(--text-light); margin-bottom: 2rem; font-size: 1.1rem;">
+                Cette section regroupe l'ensemble des missions qui m'ont été confiées dans le cadre de mon 
+                <strong>BTS SIO – SISR</strong> et de mon alternance chez <strong>Amedia Solutions</strong>. 
+                Chaque mission est accompagnée de sa documentation technique détaillée, disponible en PDF.
+            </p>
+            
+            <!-- Filtres de catégories -->
+            <div class="mission-filters">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th"></i> Toutes les missions
+                </button>
+                <button class="filter-btn" data-filter="enterprise">
+                    <i class="fas fa-building"></i> Entreprise
+                </button>
+                <button class="filter-btn" data-filter="school">
+                    <i class="fas fa-graduation-cap"></i> Scolaire
+                </button>
+            </div>
+
+            <!-- Grille de missions -->
+            <div class="missions-grid">
+                <!-- Mission entreprise 1 -->
+                <div class="mission-card enterprise-card" data-category="enterprise">
+                    <div class="card-category-badge">
+                        <i class="fas fa-building"></i>
+                        <span>Entreprise</span>
+                    </div>
+                    <div class="mission-card-header">
+                        <h4>Installation et configuration d'un serveur AD</h4>
+                        <span class="mission-date">2024</span>
+                    </div>
+                    <div class="mission-card-body">
+                        <p class="mission-company">Amedia Solutions</p>
+                        <p class="mission-description">Configuration d'un serveur Active Directory pour la gestion centralisée des identités. Promotion du contrôleur de domaine, configuration DNS, création d'OU et gestion des stratégies de groupe.</p>
+                    </div>
+                    <div class="mission-card-footer">
+                        <div class="mission-tags">
+                            <span class="tag">Active Directory</span>
+                            <span class="tag">Windows Server</span>
+                            <span class="tag">DNS</span>
+                        </div>
+                        <a href="docs/Installation-et-configuration-d'un-serveur-active-directory-sous-Windows-Server-2022.pdf" class="btn btn-primary pdf-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-file-pdf"></i> Voir la documentation
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mission entreprise 2 -->
+                <div class="mission-card enterprise-card" data-category="enterprise">
+                    <div class="card-category-badge">
+                        <i class="fas fa-building"></i>
+                        <span>Entreprise</span>
+                    </div>
+                    <div class="mission-card-header">
+                        <h4>Installation et Configuration d'un serveur d'Impression</h4>
+                        <span class="mission-date">2024</span>
+                    </div>
+                    <div class="mission-card-body">
+                        <p class="mission-company">Amedia Solutions</p>
+                        <p class="mission-description">Déploiement d'un serveur d'impression centralisé sous Windows Server. Installation des rôles, configuration des files d'attente, gestion des pilotes et permissions d'accès.</p>
+                    </div>
+                    <div class="mission-card-footer">
+                        <div class="mission-tags">
+                            <span class="tag">Print Server</span>
+                            <span class="tag">Windows Server</span>
+                            <span class="tag">Réseau</span>
+                        </div>
+                        <a href="docs/Installation-et-configuration-d'un-serveur-d'impression-sous-Windows-Server-2022.pdf" class="btn btn-primary pdf-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-file-pdf"></i> Voir la documentation
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mission entreprise 3 -->
+                <div class="mission-card enterprise-card" data-category="enterprise">
+                    <div class="card-category-badge">
+                        <i class="fas fa-building"></i>
+                        <span>Entreprise</span>
+                    </div>
+                    <div class="mission-card-header">
+                        <h4>Installation et Configuration d'un serveur DHCP</h4>
+                        <span class="mission-date">2024</span>
+                    </div>
+                    <div class="mission-card-body">
+                        <p class="mission-company">Amedia Solutions</p>
+                        <p class="mission-description">Configuration d'un serveur DHCP pour l'attribution automatique d'adresses IP. Création de pools d'adresses, configuration des options, gestion des réservations et intégration Active Directory.</p>
+                    </div>
+                    <div class="mission-card-footer">
+                        <div class="mission-tags">
+                            <span class="tag">DHCP</span>
+                            <span class="tag">Windows Server</span>
+                            <span class="tag">Réseau</span>
+                        </div>
+                        <a href="docs/Installation-et-configuration-d'un-serveur-dhcp-sous-Windows-Server-2022.pdf" class="btn btn-primary pdf-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-file-pdf"></i> Voir la documentation
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mission scolaire 1 -->
+                <div class="mission-card school-card" data-category="school">
+                    <div class="card-category-badge">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Scolaire</span>
+                    </div>
+                    <div class="mission-card-header">
+                        <h4>Installation et configuration d'un serveur GLPI</h4>
+                        <span class="mission-date">2024</span>
+                    </div>
+                    <div class="mission-card-body">
+                        <p class="mission-company">BTS SIO SISR</p>
+                        <p class="mission-description">Déploiement de GLPI sur serveur Linux pour la gestion de parc informatique. Installation, configuration de la base de données, initialisation du système et sécurisation.</p>
+                    </div>
+                    <div class="mission-card-footer">
+                        <div class="mission-tags">
+                            <span class="tag">GLPI</span>
+                            <span class="tag">Linux</span>
+                            <span class="tag">Supervision</span>
+                        </div>
+                        <a href="docs/Installation-et-configuration-d'un-serveur-glpi-sous-Debian13.pdf" class="btn btn-primary pdf-link" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-file-pdf"></i> Voir la documentation
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mission scolaire 2 -->
+                <div class="mission-card school-card" data-category="school">
+                    <div class="card-category-badge">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Scolaire</span>
+                    </div>
+                    <div class="mission-card-header">
+                        <h4>Installation et configuration d'un serveur Centreon</h4>
+                        <span class="mission-date">2024</span>
+                    </div>
+                    <div class="mission-card-body">
+                        <p class="mission-company">BTS SIO SISR</p>
+                        <p class="mission-description">Configuration d'une plateforme de supervision réseau avec Centreon. Installation, configuration des pollers, ajout d'hôtes et services, configuration des alertes et notifications.</p>
+                    </div>
+                    <div class="mission-card-footer">
+                        <div class="mission-tags">
+                            <span class="tag">Centreon</span>
+                            <span class="tag">Supervision</span>
+                            <span class="tag">Linux</span>
+                        </div>
+                        <a href="docs/DOC_SERVEUR_CENTREON.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-file-pdf"></i> Voir la documentation
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mission scolaire 3 -->
+                <div class="mission-card school-card" data-category="school">
+                    <div class="card-category-badge">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Scolaire</span>
+                    </div>
+                    <div class="mission-card-header">
+                        <h4>Installation et configuration d'un pare-feu StormShield</h4>
+                        <span class="mission-date">2024</span>
+                    </div>
+                    <div class="mission-card-body">
+                        <p class="mission-company">BTS SIO SISR</p>
+                        <p class="mission-description">Configuration d'un pare-feu StormShield pour la sécurisation du réseau. Configuration initiale, création de règles de filtrage, gestion des zones de sécurité et configuration VPN.</p>
+                    </div>
+                    <div class="mission-card-footer">
+                        <div class="mission-tags">
+                            <span class="tag">StormShield</span>
+                            <span class="tag">Pare-feu</span>
+                            <span class="tag">Sécurité</span>
+                        </div>
+                        <a href="docs/DOC_PAREFEU_STORMSHIELD.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-file-pdf"></i> Voir la documentation
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parcours Section -->
+    <section id="parcours" class="timeline">
+        <div class="container">
+            <h2 class="section-title">Mon Parcours</h2>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-year">2024 - 2026</div>
+                    <div class="timeline-content">
+                        <h3>BTS SIO – SISR</h3>
+                        <h4>Lycée Suzanne Valadon – Limoges</h4>
+                        <p>Formation en Solutions d'Infrastructure, Systèmes et Réseaux avec alternance chez Amedia Solutions</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2021 - 2024</div>
+                    <div class="timeline-content">
+                        <h3>Bac Pro Systèmes Numériques – RISC</h3>
+                        <h4>Lycée Georges Cabanis – Brive-la-Gaillarde</h4>
+                        <p>Formation technique en Réseaux Informatiques et Systèmes Communicants</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Veille Technologique Section -->
+    <section id="veille" class="veille-section">
+        <div class="container">
+            <h2 class="section-title">Veille Technologique</h2>
+            
+            <!-- Sujet de veille -->
+            <div class="subject-card" style="margin-bottom: 3rem;">
+                <div class="subject-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="subject-content">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">L'administration système et la cybersécurité</h3>
+                    <p style="margin-bottom: 1.5rem;">
+                        Veille quotidienne sur l'évolution de l'administration système et la cybersécurité des infrastructures informatiques, 
+                        un domaine en constante mutation face aux nouvelles technologies et menaces.
+                    </p>
+                    <div class="subject-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-server"></i>
+                            <span>Administration des serveurs</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Sécurisation des systèmes</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-cloud"></i>
+                            <span>Virtualisation et cloud</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Méthodologie condensée -->
+            <div class="methodology-grid" style="margin-bottom: 3rem;">
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-rss"></i>
+                    </div>
+                    <h3>Outil</h3>
+                    <h4>Feedly</h4>
+                    <p>Agrégateur RSS pour centraliser mes sources d'information et suivre les évolutions technologiques.</p>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Fréquence</h3>
+                    <h4>Veille quotidienne</h4>
+                    <p>Consultation quotidienne pour identifier rapidement les tendances émergentes et les nouvelles menaces.</p>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <h3>Sources principales</h3>
+                    <h4>ANSSI, Le Monde Informatique, AWS, Azure</h4>
+                    <p>Suivi des actualités sécurité et des évolutions cloud pour rester à jour avec les meilleures pratiques.</p>
+                </div>
+            </div>
+
+            <!-- Évolutions clés (condensées) -->
+            <h3 class="sources-title" style="margin-bottom: 2rem;">Évolutions technologiques clés suivies</h3>
+            <div class="timeline-container" style="max-width: 900px;">
+                <div class="timeline-item">
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-content">
+                        <h3>Windows Server 2025</h3>
+                        <p>Nouvelles fonctionnalités : Hyper-V avancé, améliorations Active Directory, sécurité renforcée et intégration Azure Arc pour la gestion hybride.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-content">
+                        <h3>Ransomware ciblant les serveurs</h3>
+                        <p>Explosion des attaques ciblant les infrastructures serveurs. L'ANSSI a publié de nouvelles recommandations de sécurisation pour protéger les contrôleurs de domaine.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-content">
+                        <h3>Infrastructure as Code</h3>
+                        <p>Adoption massive de Terraform, Ansible et Pulumi. L'automatisation devient un standard dans la gestion des environnements hybrides et multi-cloud.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conclusion condensée -->
+            <div class="analysis-content" style="margin-top: 3rem; grid-template-columns: 1fr;">
+                <div class="analysis-text">
+                    <p style="text-align: center; font-size: 1.1rem; color: var(--text-light); max-width: 800px; margin: 0 auto;">
+                        Cette veille me prépare à devenir un administrateur système moderne, capable d'anticiper les évolutions technologiques 
+                        et d'adapter les infrastructures aux nouveaux défis de sécurité. Elle renforce ma conviction que l'administration 
+                        système doit intégrer une approche proactive de la sécurité et de l'automatisation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-content">
+                <div class="contact-text">
+                    <h3>Vous souhaitez en savoir plus ?</h3>
+                    <p>N'hésitez pas à me contacter pour discuter de mes compétences, de mon parcours ou d'opportunités professionnelles.</p>
+                </div>
+                <div class="contact-links">
+                    <!-- TODO: Remplacer par votre vraie adresse email -->
+                    <a href="mailto:loic.servantie@example.com" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/loïc-servantie-448087263" class="contact-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/loic-servantie" class="contact-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Loïc SERVANTIE - Portfolio Étudiant BTS SIO SISR</p>
+        </div>
+    </footer>
+
+    <!-- Bouton de remontée de page -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Remonter en haut de la page">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
