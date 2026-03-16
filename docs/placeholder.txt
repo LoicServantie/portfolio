@@ -17,3 +17,5 @@ Fichiers attendus :
 - Zabbix_Monitoring.pdf
 - PowerShell_AD_Users.pdf
 - Bash_Backup.pdf
+- Installation-et-configuration-d'un-serveur-dns-sous-linux.pdf
+- Installation-et-configuration-d'un-serveur-dhcp-sous-Linux.pdf
