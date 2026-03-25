@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
+    const reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     // Toggle mobile menu
     if (hamburger && navMenu) {
@@ -113,30 +114,32 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100));
     }
 
-    // Animation on scroll
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+    // Animation on scroll (désactivée si prefers-reduced-motion)
+    if (!reducedMotion) {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
 
-    // Observe elements for animation
-    const animateElements = document.querySelectorAll('.skill-card, .timeline-item, .contact-link, .mission-card');
-    if (animateElements.length > 0) {
-        animateElements.forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
+        // Observe elements for animation
+        const animateElements = document.querySelectorAll('.skill-card, .timeline-item, .contact-link, .mission-card');
+        if (animateElements.length > 0) {
+            animateElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
     }
 
     // CV Download functionality (placeholder)
@@ -231,23 +234,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Add CSS for active navigation link
-const style = document.createElement('style');
-style.textContent = `
-    .nav-link.active {
-        color: var(--primary-color) !important;
-    }
-    .nav-link.active::after {
-        width: 100% !important;
-    }
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-`;
-document.head.appendChild(style);
+// (Styles "active" du menu gérés en CSS statique dans styles.css)

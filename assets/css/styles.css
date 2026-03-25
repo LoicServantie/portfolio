@@ -17,8 +17,22 @@
     --border-color: #e2e8f0;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 25px;
+    --transition-fast: 0.2s ease;
+    --transition: 0.3s ease;
     --gradient: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
     --gradient-light: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+
+    /* Alternance des fonds entre sections */
+    /* A = même fond que la section Hero (Accueil) */
+    --section-a-bg:
+        radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(14, 165, 233, 0.08) 0%, transparent 50%),
+        linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    --section-b-bg: linear-gradient(to bottom, #ffffff 0%, #f1f5f9 100%);
 }
 
 body {
@@ -119,6 +133,14 @@ body > * {
     width: 100%;
 }
 
+.nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+.nav-link.active::after {
+    width: 100% !important;
+}
+
 .nav-link:focus-visible {
     outline: 2px solid var(--primary-color);
     outline-offset: 4px;
@@ -145,7 +167,19 @@ body > * {
     height: 3px;
     background: var(--text-dark);
     margin: 3px 0;
-    transition: 0.3s;
+    transition: var(--transition);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Hero Section */
@@ -192,7 +226,7 @@ body > * {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 4vw, 3.5rem);
     font-weight: 700;
     color: var(--text-dark);
     margin-bottom: 1rem;
@@ -200,14 +234,14 @@ body > * {
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
     color: var(--primary-color);
     margin-bottom: 1.5rem;
     font-weight: 600;
 }
 
 .hero-description {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
     color: var(--text-light);
     margin-bottom: 2.5rem;
     line-height: 1.7;
@@ -222,10 +256,10 @@ body > * {
 .btn {
     display: inline-block;
     padding: 12px 24px;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all var(--transition);
     border: none;
     cursor: pointer;
     font-size: 1rem;
@@ -294,12 +328,19 @@ body > * {
 
 /* Sections communes */
 .section-title {
-    font-size: 2.5rem;
+    font-size: clamp(1.6rem, 3.2vw, 2.5rem);
     font-weight: 700;
     text-align: center;
     margin-bottom: 3rem;
     color: var(--text-dark);
     position: relative;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
 }
 
 .section-title::after {
@@ -379,10 +420,10 @@ body > * {
 .skill-card {
     background: var(--bg-white);
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     text-align: center;
     box-shadow: var(--shadow);
-    transition: all 0.3s ease;
+    transition: all var(--transition);
     border: 1px solid var(--border-color);
 }
 
@@ -485,7 +526,7 @@ body > * {
     flex: 1;
     background: var(--bg-white);
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     box-shadow: var(--shadow);
     margin: 0 2rem;
     border: 1px solid var(--border-color);
@@ -585,9 +626,9 @@ body > * {
     background: var(--bg-white);
     color: var(--text-dark);
     text-decoration: none;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     box-shadow: var(--shadow);
-    transition: all 0.3s ease;
+    transition: all var(--transition);
     border: 1px solid var(--border-color);
 }
 
@@ -639,6 +680,15 @@ body > * {
     to {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
     }
 }
 
@@ -774,14 +824,17 @@ body > * {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .doc-card {
     background: var(--bg-white);
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     box-shadow: var(--shadow);
-    transition: all 0.3s ease;
+    transition: all var(--transition);
     border: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
@@ -875,7 +928,7 @@ body > * {
     background-color: var(--bg-white);
     margin: 2% auto;
     padding: 0;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     width: 90%;
     max-width: 1000px;
     max-height: 90vh;
@@ -1026,20 +1079,21 @@ body > * {
 .subject-card {
     background: var(--bg-white);
     padding: 3rem;
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
     border: 1px solid var(--border-color);
     display: flex;
     gap: 2rem;
     align-items: flex-start;
     margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 .subject-icon {
     width: 80px;
     height: 80px;
     background: var(--gradient);
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1052,7 +1106,7 @@ body > * {
 }
 
 .subject-content h3 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: var(--text-dark);
     margin-bottom: 1rem;
@@ -1061,7 +1115,7 @@ body > * {
 .subject-content p {
     color: var(--text-light);
     line-height: 1.7;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     font-size: 1.1rem;
 }
 
@@ -1077,7 +1131,7 @@ body > * {
     gap: 0.5rem;
     padding: 0.5rem 1rem;
     background: var(--bg-light);
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     border: 1px solid var(--border-color);
 }
 
@@ -1098,16 +1152,17 @@ body > * {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 .method-card {
     background: var(--bg-white);
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     box-shadow: var(--shadow);
     border: 1px solid var(--border-color);
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all var(--transition);
 }
 
 .method-card:hover {
@@ -1160,7 +1215,11 @@ body > * {
     font-weight: 600;
     color: var(--text-dark);
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+}
+
+.veille-timeline-container {
+    max-width: 900px;
 }
 
 .sources-grid {
@@ -1172,7 +1231,7 @@ body > * {
 .source-category {
     background: var(--bg-white);
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     box-shadow: var(--shadow);
     border: 1px solid var(--border-color);
 }
@@ -1236,12 +1295,24 @@ body > * {
     margin-top: 3rem;
 }
 
+.analysis-content--single {
+    grid-template-columns: 1fr;
+}
+
 .analysis-text p {
     font-size: 1.1rem;
     color: var(--text-light);
     line-height: 1.8;
     margin-bottom: 1.5rem;
     text-align: justify;
+}
+
+.analysis-paragraph-center {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .analysis-highlights {
@@ -1447,11 +1518,11 @@ body > * {
     padding: 0.75rem 1.5rem;
     background: var(--bg-white);
     border: 2px solid var(--border-color);
-    border-radius: 25px;
+    border-radius: var(--radius-xl);
     color: var(--text-dark);
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all var(--transition);
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -1491,11 +1562,11 @@ body > * {
 
 .mission-card {
     background: var(--bg-white);
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     padding: 1.5rem;
     box-shadow: var(--shadow);
     border: 2px solid transparent;
-    transition: all 0.3s ease;
+    transition: all var(--transition);
     position: relative;
     overflow: hidden;
     display: flex;
@@ -1509,7 +1580,7 @@ body > * {
     left: 0;
     right: 0;
     height: 5px;
-    transition: all 0.3s ease;
+    transition: all var(--transition);
 }
 
 .enterprise-card::before {
@@ -1692,4 +1763,75 @@ body > * {
     .mission-date {
         align-self: flex-start;
     }
+}
+
+/* =========================================================
+   Alternance de fond A / B (global, par ordre des sections)
+   Objectif: alterner les fonds entre les onglets (sections)
+   ========================================================= */
+
+/* 1) On neutralise les fonds “spécifiques” définis plus haut */
+body > section.hero,
+body > section.about,
+body > section.timeline,
+body > section.missions,
+body > section.skills,
+body > section.veille-section,
+body > section.documentation-section,
+body > section.contact {
+    background: none !important;
+}
+
+body > section.hero::before,
+body > section.about::before,
+body > section.timeline::before,
+body > section.missions::before,
+body > section.skills::before,
+body > section.veille-section::before,
+body > section.contact::before {
+    content: none !important;
+}
+
+/* 2) Alternance automatique: 1ère section (Accueil) = A, puis B, A, B... */
+body > section {
+    position: relative;
+}
+
+body > section:nth-of-type(odd) {
+    background: var(--section-a-bg) !important;
+}
+
+body > section:nth-of-type(odd)::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0;
+    /* Fond A = exactement le style du Hero (Accueil) */
+    background-image:
+        radial-gradient(circle at 1px 1px, rgba(37, 99, 235, 0.1) 1px, transparent 0) !important;
+    background-size: 60px 60px !important;
+    opacity: 0.4 !important;
+    pointer-events: none !important;
+    z-index: 0;
+}
+
+body > section:nth-of-type(even) {
+    background: var(--section-b-bg) !important;
+}
+
+body > section:nth-of-type(even)::before {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 1px 1px, rgba(37, 99, 235, 0.05) 1px, transparent 0) !important;
+    background-size: 50px 50px !important;
+    opacity: 0.55 !important;
+    pointer-events: none !important;
+    z-index: 0;
+}
+
+/* 3) Le contenu reste au-dessus des overlays */
+body > section > * {
+    position: relative;
+    z-index: 1;
 }
