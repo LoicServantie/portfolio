@@ -86,7 +86,7 @@ body > * {
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
@@ -103,7 +103,9 @@ body > * {
 
 .nav-menu {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
 .nav-link {
@@ -112,6 +114,7 @@ body > * {
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
+    white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -412,19 +415,28 @@ body > * {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
+    align-items: start;
+}
+
+.skills-subtitle {
+    max-width: 900px;
+    margin: 0 auto 2.5rem;
 }
 
 .skill-card {
     background: var(--bg-white);
     padding: 2rem;
     border-radius: var(--radius-md);
-    text-align: center;
+    text-align: left;
     box-shadow: var(--shadow);
     transition: all var(--transition);
     border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
 }
 
 .skill-card:hover {
@@ -432,32 +444,94 @@ body > * {
     box-shadow: var(--shadow-lg);
 }
 
+.skill-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
 .skill-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1.5rem;
+    width: 56px;
+    height: 56px;
+    margin: 0;
     background: var(--gradient);
-    border-radius: 50%;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .skill-icon i {
-    font-size: 2rem;
+    font-size: 1.4rem;
     color: white;
 }
 
 .skill-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     color: var(--text-dark);
 }
 
 .skill-card p {
     color: var(--text-light);
     line-height: 1.6;
+    font-size: 0.97rem;
+}
+
+.skill-level {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.32rem 0.72rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    border: 1px solid transparent;
+}
+
+.level-intermediate {
+    background: rgba(37, 99, 235, 0.1);
+    color: #1d4ed8;
+    border-color: rgba(37, 99, 235, 0.25);
+}
+
+.skill-tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin: 0.2rem 0 0.1rem;
+    padding: 0;
+}
+
+.skill-tags li {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.36rem 0.62rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    line-height: 1.2;
+    background: #eef2ff;
+    color: #1e3a8a;
+    border: 1px solid #dbeafe;
+}
+
+.skill-proof {
+    margin-top: 0.35rem;
+    width: fit-content;
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.skill-proof:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
 }
 
 /* Timeline Section */
@@ -693,6 +767,48 @@ body > * {
 }
 
 /* Responsive Design */
+@media (max-width: 1100px) {
+    .logo-text {
+        font-size: 1.2rem;
+    }
+
+    .nav-menu {
+        gap: 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--bg-white);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: var(--shadow);
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu a {
+        margin: 1rem 0;
+        font-size: 1.1rem;
+    }
+}
+
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -749,6 +865,19 @@ body > * {
 
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+
+    .skill-card {
+        padding: 1.5rem;
+    }
+
+    .skill-card-head {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .skill-level {
+        margin-top: 0.1rem;
     }
 
     .timeline-container::before {
