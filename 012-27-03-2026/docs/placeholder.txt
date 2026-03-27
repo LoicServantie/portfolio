@@ -1,0 +1,21 @@
+# Fichiers PDF Placeholder
+
+Ce dossier contiendra les documentations techniques en PDF.
+
+Pour tester la fonctionnalité, vous pouvez :
+1. Créer des fichiers PDF réels avec vos documentations
+2. Les nommer selon les conventions utilisées dans le code HTML
+3. Les placer dans ce dossier
+
+Fichiers attendus :
+- AD_Installation.pdf
+- DHCP_Windows.pdf
+- FileServer_NTFS.pdf
+- DNS_Configuration.pdf
+- IPv4_Plan.pdf
+- pfSense_Setup.pdf
+- Zabbix_Monitoring.pdf
+- PowerShell_AD_Users.pdf
+- Bash_Backup.pdf
+- Installation-et-configuration-d'un-serveur-dns-sous-linux.pdf
+- Installation-et-configuration-d'un-serveur-dhcp-sous-Linux.pdf
