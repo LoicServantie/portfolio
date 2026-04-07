@@ -219,19 +219,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Encoder correctement les URLs des PDFs avec apostrophes typographiques
-    const pdfLinks = document.querySelectorAll('.pdf-link');
-    if (pdfLinks.length > 0) {
-        pdfLinks.forEach(link => {
-            const originalHref = link.getAttribute('href');
-            if (originalHref) {
-                // Remplacer l'apostrophe typographique (U+2019) par son encodage URL UTF-8
-                // L'apostrophe typographique ' (U+2019) s'encode en %E2%80%99 en UTF-8
-                const encodedHref = originalHref.replace(/'/g, '%E2%80%99');
-                link.setAttribute('href', encodedHref);
-            }
-        });
-    }
+    // Les liens PDF restent inchangés: ils doivent correspondre exactement
+    // aux noms des fichiers présents dans le dossier docs.
 });
 
 // (Styles "active" du menu gérés en CSS statique dans styles.css)
